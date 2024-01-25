@@ -1,0 +1,26 @@
+class Solution {
+    // solve thise q usng recursion firat we have to find mid == ;
+    int search2 (int[] arr, int target , int start , int end  ){
+        // make a fuctinion takeing arr , your target , start , end to make think easy .. 
+        int mid = start + (end -start) /2;
+        if ( start > end ){
+            return -1;
+        }
+        if (arr[mid] == target ){
+          return mid ;
+          }
+         if  (arr[mid]< target ){
+             // reducting the searching space ..
+            return search2 ( arr, target  , mid+1, end); 
+        }
+        else { 
+            return search2 (arr,target , start , mid-1);
+        }
+        
+        
+    }
+    public int search(int[] nums, int target) {
+
+return  search2 ( nums, target , 0 , nums.length-1);
+    }
+}
