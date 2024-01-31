@@ -1,0 +1,19 @@
+// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
+// then press Enter. You can now see whitespace characters in your code.
+public class Main {
+    public static void main(String[] args) {
+int[] arr = {1,2,3,8,5,6};
+
+        System.out.println(search(arr,8, 0));
+
+    }
+     static boolean search ( int[] arr, int target , int index ){
+        // make base condition here and it will also handling index out of bound error ...
+        if ( target  != arr[arr.length-1] && index == arr.length-1) {
+            return false ;
+        }
+        // using and operator if both conditions are true  then it will return  true ;;
+        return arr[index] == target  ||  search(arr, target ,  index+1);
+     }
+
+}
